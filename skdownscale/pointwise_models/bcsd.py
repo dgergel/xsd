@@ -125,7 +125,7 @@ class BcsdPrecipitation(BcsdBase):
         """
 
         self._pre_fit()
-        X, y = self._validate_data(X, y, y_numeric=True)
+        # X, y = self._validate_data(X, y, y_numeric=True)
         # TO-DO: set n_features_n attribute
         if self.n_features_in_ != 1:
             raise ValueError(f'BCSD only supports 1 feature, found {self.n_features_in_}')
@@ -157,7 +157,7 @@ class BcsdPrecipitation(BcsdBase):
             Returns predicted values.
         """
         check_is_fitted(self)
-        X = self._validate_data(X)
+        # X = self._validate_data(X)
 
         # Bias correction
         # apply quantile mapping by month or day
@@ -223,7 +223,7 @@ class BcsdTemperature(BcsdBase):
         """
 
         self._pre_fit()
-        X, y = self._validate_data(X, y, y_numeric=True)
+        # X, y = self._validate_data(X, y, y_numeric=True)
         # TO-DO: set n_features_in attribute
         if self.n_features_in_ != 1:
             raise ValueError(f'BCSD only supports up to 4 features, found {self.n_features_in_}')
